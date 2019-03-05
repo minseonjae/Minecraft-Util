@@ -30,7 +30,9 @@ public class UTF8YamlConfiguration extends YamlConfiguration {
 		for(String s : super.saveToString().split("\\\\u")) {
 			if(s.length() >= 4 && !first) {
 				data += (char)Integer.parseInt(s.substring(0, 4), 16);
-				if(s.length() >= 5) data += s.substring(4);
+				if(s.length() >= 5) {
+					data += s.substring(4);
+				}
 			} else {
 				data += s;
 				first = false;
