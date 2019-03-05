@@ -21,6 +21,14 @@ public class BukkitUtil {
 	@Getter
 	private static NMSVersion nMSVersion = NMSVersion.UNKNOWN;
 	
+	public boolean checkKCauldronServer() {
+		try {
+			Class.forName("kcauldron.KCauldron");
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
 	public void loadNMSVersion() {
 		try {
 			Class<?> clazz = Class.forName("org.bukkit.Bukkit");
