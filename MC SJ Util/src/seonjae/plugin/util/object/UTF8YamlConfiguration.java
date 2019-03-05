@@ -25,11 +25,8 @@ import lombok.Cleanup;
 public class UTF8YamlConfiguration extends YamlConfiguration {
 	
 	public String saveToString() {
-		
 		String data = new String();
-		
 		boolean first = true;
-		
 		for(String s : super.saveToString().split("\\\\u")) {
 			if(s.length() >= 4 && !first) {
 				data += (char)Integer.parseInt(s.substring(0, 4), 16);
