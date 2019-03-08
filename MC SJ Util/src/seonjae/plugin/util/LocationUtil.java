@@ -7,6 +7,9 @@ import lombok.experimental.UtilityClass;
 
 @UtilityClass
 public class LocationUtil {
+	public double getDistance(Location l1, Location l2) {
+		return getDistance(l1.getX(), l1.getY(), l1.getZ(), l2.getX(), l2.getY(), l2.getZ());
+	}
 	public double getDistance(double X1, double Z1, double X2, double Z2) {
 		return Math.sqrt(Math.pow(X1 - X2, 2) + Math.pow(Z1 - Z2, 2));
 	}
